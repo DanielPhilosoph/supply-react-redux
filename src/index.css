@@ -1,0 +1,27 @@
+.workerForm {
+  width: 60%;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.supplyList {
+  width: 80%;
+  margin: auto;
+  margin-top: 40px;
+}
+
+.addItemForm {
+  width: 60%;
+  margin: auto;
+  margin-top: 40px;
+}
+
+.addItemColButton {
+  margin-top: 20px;
+}
+
+.submitButtonDiv {
+  width: 60%;
+  margin: auto;
+  margin-top: 40px;
+}
