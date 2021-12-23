@@ -1,6 +1,6 @@
 const user = {
-  name: "daniel",
-  company: "RGB",
+  name: "*Name*",
+  company: "*Company*",
   date: "12-12-2021",
 };
 
