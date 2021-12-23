@@ -25,3 +25,15 @@
   margin: auto;
   margin-top: 40px;
 }
+
+.errorLabel {
+  color: red;
+  font-size: 13px;
+}
+
+.listInput {
+  border: 0.2px solid gray;
+  border-radius: 5px;
+  background: transparent;
+  width: 90%;
+}

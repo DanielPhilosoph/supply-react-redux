@@ -6,7 +6,7 @@ export default function SubmitButton() {
     <div className="submitButtonDiv">
       <div className="d-grid gap-2">
         <Button variant="primary" size="lg">
-          Submit
+          Submit worker supply check
         </Button>
       </div>
     </div>
