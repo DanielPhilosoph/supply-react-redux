@@ -52,3 +52,27 @@ export const validateCurrentAmount = (currentAmount, fullAmount) => {
     };
   }
 };
+
+export const validationWorkerForm = (name, company, date) => {
+  if (name && company && date) {
+    if (isNaN(name)) {
+      if (isNaN(company)) {
+        if (name.length > 2) {
+          if (company.length > 2) {
+            return { valid: true };
+          } else {
+            return { valid: false, message: "Name is to short" };
+          }
+        } else {
+          return { valid: false, message: "Name is to short" };
+        }
+      } else {
+        return { valid: false, message: "Company must be only letters" };
+      }
+    } else {
+      return { valid: false, message: "Name must be only letters" };
+    }
+  } else {
+    return { valid: false, message: "Require all fields" };
+  }
+};

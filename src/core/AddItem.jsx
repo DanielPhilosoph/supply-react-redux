@@ -17,7 +17,6 @@ export default function AddItem() {
       fullAmount.current.value,
       currentAmount.current.value
     );
-    console.log(response);
     if (response.valid) {
       errorLabel.current.innerText = "";
       dispatch({
@@ -29,7 +28,6 @@ export default function AddItem() {
         },
       });
     } else {
-      console.log("X");
       errorLabel.current.innerText = response.message;
     }
   };

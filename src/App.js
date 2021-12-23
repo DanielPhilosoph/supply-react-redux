@@ -4,14 +4,21 @@ import NavBar from "./core/NavBar";
 import SubmitButton from "./core/SubmitButton";
 import SupplyList from "./core/SupplyList";
 import WorkerForm from "./core/WorkerForm";
+import React, { useRef } from "react";
 
 function App() {
+  const button = useRef();
+
   return (
     <div className="App">
       <NavBar />
-      <WorkerForm />
+      <WorkerForm buttonRef={button} />
       <SupplyList />
-      <SubmitButton />
+      <div className="submitButtonDiv">
+        <div className="d-grid gap-2">
+          <SubmitButton ref={button} />
+        </div>
+      </div>
       <AddItem />
     </div>
   );

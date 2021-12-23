@@ -31,8 +31,7 @@ export default function supplyReducer(state = initialSupply, action) {
         }
         return supplyItem;
       });
-    case "SUBMIT_FORM":
-      return action.payload.supply;
+
     default:
       return state;
   }
