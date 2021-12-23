@@ -12,7 +12,6 @@ export default function usersReducer(state = user, action) {
         company: action.payload.company,
         date: action.payload.date,
       };
-      console.log(updatedUser);
       return updatedUser;
 
     default:

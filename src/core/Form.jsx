@@ -8,7 +8,6 @@ export default function Form() {
   const supplyState = useSelector((state) => state.supply);
 
   const navigate = useNavigate();
-  console.log(usersState);
   return (
     <Card className="formCard">
       <Card.Header as="h3">{usersState.name}</Card.Header>

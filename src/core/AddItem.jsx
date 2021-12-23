@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import { Form, Col, Row, Button } from "react-bootstrap";
 import { useDispatch } from "react-redux";
+import { addSupplyItem } from "../helpers/actions";
 
 import { validateSupplyItem } from "../helpers/functions";
 
@@ -19,14 +20,13 @@ export default function AddItem() {
     );
     if (response.valid) {
       errorLabel.current.innerText = "";
-      dispatch({
-        type: "ADD_SUPPLY_ITEM",
-        payload: {
-          supplyName: supplyName.current.value,
-          fullAmount: fullAmount.current.value,
-          currentAmount: currentAmount.current.value,
-        },
-      });
+      dispatch(
+        addSupplyItem(
+          supplyName.current.value,
+          fullAmount.current.value,
+          currentAmount.current.value
+        )
+      );
     } else {
       errorLabel.current.innerText = response.message;
     }

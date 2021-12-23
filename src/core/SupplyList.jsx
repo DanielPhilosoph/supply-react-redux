@@ -6,7 +6,6 @@ import SupplyTr from "./SupplyTr";
 
 export default function SupplyList() {
   const state = useSelector((state) => state.supply);
-  console.log(state);
   return (
     <div className="supplyList">
       <Table striped bordered hover>

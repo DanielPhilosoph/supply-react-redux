@@ -2,9 +2,9 @@ export const validateSupplyItem = (supplyName, fullAmount, currentAmount) => {
   if (supplyName && fullAmount && currentAmount) {
     if (isNaN(supplyName)) {
       if (supplyName.length > 3) {
-        if (!isNaN(fullAmount) && fullAmount > 0) {
-          if (!isNaN(currentAmount) && currentAmount > 0) {
-            if (currentAmount <= fullAmount) {
+        if (!isNaN(fullAmount) && parseInt(fullAmount) > 0) {
+          if (!isNaN(currentAmount) && parseInt(currentAmount) > 0) {
+            if (parseInt(currentAmount) <= parseInt(fullAmount)) {
               return { valid: true };
             } else {
               return {
@@ -36,8 +36,8 @@ export const validateSupplyItem = (supplyName, fullAmount, currentAmount) => {
 };
 
 export const validateCurrentAmount = (currentAmount, fullAmount) => {
-  if (!isNaN(currentAmount) && currentAmount > 0) {
-    if (fullAmount >= currentAmount) {
+  if (!isNaN(currentAmount) && parseInt(currentAmount) > 0) {
+    if (parseInt(fullAmount) >= parseInt(currentAmount)) {
       return { valid: true };
     } else {
       return {

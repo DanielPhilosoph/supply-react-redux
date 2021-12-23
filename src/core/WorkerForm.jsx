@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { Form, Col, Row } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router";
+import { submitForm } from "../helpers/actions";
 import { validationWorkerForm } from "../helpers/functions";
 
 export default function WorkerForm({ buttonRef }) {
@@ -23,21 +24,19 @@ export default function WorkerForm({ buttonRef }) {
       dateR.current.value
     );
     if (response.valid) {
-      dispatch({
-        type: "SUBMIT_FORM",
-        payload: {
-          name: nameR.current.value,
-          company: companyR.current.value,
-          date: dateR.current.value,
-        },
-      });
+      dispatch(
+        submitForm(
+          nameR.current.value,
+          companyR.current.value,
+          dateR.current.value
+        )
+      );
       navigate("/form");
     } else {
       errorLabel.current.innerText = response.message;
     }
   };
 
-  console.log(buttonRef);
   return (
     <Form className="workerForm">
       <div>

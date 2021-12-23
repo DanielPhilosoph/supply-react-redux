@@ -1,6 +1,7 @@
 import React from "react";
 import { useRef } from "react";
 import { useDispatch } from "react-redux";
+import { editCurrentAmount } from "../helpers/actions";
 
 import { validateCurrentAmount } from "../helpers/functions";
 
@@ -14,10 +15,7 @@ export default function SupplyTr({ index, supply }) {
       supply.fullAmount
     );
     if (response.valid) {
-      dispatch({
-        type: "EDIT_CURRENT_AMOUNT_SUPPLY_ITEM",
-        payload: { id: supply.id, currentAmount: currentAmount.current.value },
-      });
+      dispatch(editCurrentAmount(supply.id, currentAmount.current.value));
     } else {
       currentAmount.current.value = supply.currentAmount;
     }

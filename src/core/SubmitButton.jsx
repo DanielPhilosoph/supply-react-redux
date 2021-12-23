@@ -7,6 +7,4 @@ const forwardButtonRef = forwardRef((props, ref) => (
   </Button>
 ));
 
-console.log(forwardButtonRef);
-
 export default forwardButtonRef;
