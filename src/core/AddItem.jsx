@@ -27,6 +27,9 @@ export default function AddItem() {
           currentAmount.current.value
         )
       );
+      supplyName.current.value = "";
+      fullAmount.current.value = "";
+      currentAmount.current.value = "";
     } else {
       errorLabel.current.innerText = response.message;
     }
