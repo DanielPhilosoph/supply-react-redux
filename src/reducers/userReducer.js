@@ -1,7 +1,7 @@
 const user = {
-  name: "",
-  company: "",
-  date: "",
+  name: "daniel",
+  company: "RGB",
+  date: "12-12-2021",
 };
 
 export default function usersReducer(state = user, action) {
@@ -12,6 +12,7 @@ export default function usersReducer(state = user, action) {
         company: action.payload.company,
         date: action.payload.date,
       };
+      console.log(updatedUser);
       return updatedUser;
 
     default:

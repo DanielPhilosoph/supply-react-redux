@@ -37,3 +37,24 @@
   background: transparent;
   width: 90%;
 }
+
+.link {
+  color: gray;
+  text-decoration: none;
+}
+.link:hover {
+  color: rgb(170, 170, 170);
+}
+
+.formCard {
+  width: 50%;
+  margin: auto;
+  margin-top: 30px;
+}
+
+.supplyStatusFormDiv {
+  margin-bottom: 10px;
+  border: 0.3px solid black;
+  border-radius: 7px;
+  padding: 10px;
+}
