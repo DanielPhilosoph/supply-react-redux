@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { Form, Col, Row } from "react-bootstrap";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router";
 import { validationWorkerForm } from "../helpers/functions";
 
 export default function WorkerForm({ buttonRef }) {
@@ -9,6 +10,7 @@ export default function WorkerForm({ buttonRef }) {
   const dateR = useRef();
   const errorLabel = useRef();
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   useEffect(() => {
     buttonRef.current.addEventListener("click", onSubmitClick);
@@ -29,6 +31,7 @@ export default function WorkerForm({ buttonRef }) {
           date: dateR.current.value,
         },
       });
+      navigate("/form");
     } else {
       errorLabel.current.innerText = response.message;
     }
