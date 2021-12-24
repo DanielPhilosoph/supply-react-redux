@@ -59,6 +59,24 @@
   padding: 10px;
 }
 
+.deleteButtonSpan {
+  float: right;
+}
+
+.deleteButton {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 2px 6px;
+  border-radius: 4px;
+  transition: 0.4s;
+}
+
+.deleteButton:hover {
+  box-shadow: 1px 1px 1px 1px gray;
+  transition: 0.4s;
+}
+
 @media screen and (max-width: 600px) {
   .supplyList {
     width: 100%;

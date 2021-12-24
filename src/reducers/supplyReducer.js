@@ -1,19 +1,6 @@
 import uniqid from "uniqid";
 
-const initialSupply = [
-  {
-    id: "1",
-    currentAmount: 0,
-    fullAmount: 10,
-    supplyName: "Blood tests",
-  },
-  {
-    id: "2",
-    currentAmount: 0,
-    fullAmount: 13,
-    supplyName: "Covid-19 tests",
-  },
-];
+import { initialSupply } from "../db/db";
 
 export default function supplyReducer(state = initialSupply, action) {
   switch (action.type) {
@@ -25,6 +12,7 @@ export default function supplyReducer(state = initialSupply, action) {
           currentAmount: action.payload.currentAmount,
           fullAmount: action.payload.fullAmount,
           supplyName: action.payload.supplyName,
+          default: false,
         },
       ];
     case "EDIT_CURRENT_AMOUNT_SUPPLY_ITEM":

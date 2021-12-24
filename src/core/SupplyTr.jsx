@@ -1,11 +1,11 @@
 import React from "react";
 import { useRef } from "react";
 import { useDispatch } from "react-redux";
-import { editCurrentAmount } from "../helpers/actions";
+import { deleteItem, editCurrentAmount } from "../helpers/actions";
 
 import { validateCurrentAmount } from "../helpers/functions";
 
-export default function SupplyTr({ index, supply }) {
+export default function SupplyTr({ index, supply, deleteButtonDisplay }) {
   const currentAmount = useRef();
   const dispatch = useDispatch();
 
@@ -21,10 +21,28 @@ export default function SupplyTr({ index, supply }) {
     }
   };
 
+  const onDeleteClick = () => {
+    dispatch(deleteItem(supply.id));
+  };
+
   return (
     <tr>
       <td>{index}</td>
-      <td>{supply.supplyName}</td>
+      <td>
+        {supply.supplyName}
+        <span
+          className="deleteButtonSpan"
+          style={{ display: deleteButtonDisplay ? "none" : "block" }}
+        >
+          <button
+            className="deleteButton"
+            type="button"
+            onClick={onDeleteClick}
+          >
+            Delete
+          </button>
+        </span>
+      </td>
       <td>{supply.fullAmount}</td>
       <td>
         <input

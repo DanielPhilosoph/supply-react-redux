@@ -1,8 +1,4 @@
-const user = {
-  name: "*Name*",
-  company: "*Company*",
-  date: "12-12-2021",
-};
+import { user } from "../db/db";
 
 export default function usersReducer(state = user, action) {
   switch (action.type) {
