@@ -1,6 +1,6 @@
 export const validateSupplyItem = (supplyName, fullAmount, currentAmount) => {
   if (supplyName && fullAmount && currentAmount) {
-    if (isNaN(supplyName)) {
+    if (isNaN(supplyName) && /^[a-z A-Z0-9-]+$/.test(supplyName)) {
       if (supplyName.length > 3) {
         if (!isNaN(fullAmount) && parseInt(fullAmount) > 0) {
           if (!isNaN(currentAmount) && parseInt(currentAmount) > 0) {
@@ -55,8 +55,8 @@ export const validateCurrentAmount = (currentAmount, fullAmount) => {
 
 export const validationWorkerForm = (name, company, date) => {
   if (name && company && date) {
-    if (isNaN(name)) {
-      if (isNaN(company)) {
+    if (isNaN(name) && /^[a-z A-Z]+$/.test(name)) {
+      if (isNaN(company) && /^[a-zA-Z0-9-]+$/.test(company)) {
         if (name.length > 2) {
           if (company.length > 2) {
             return { valid: true };
@@ -67,7 +67,7 @@ export const validationWorkerForm = (name, company, date) => {
           return { valid: false, message: "Name is to short" };
         }
       } else {
-        return { valid: false, message: "Company must be only letters" };
+        return { valid: false, message: "Company cant contain symbols" };
       }
     } else {
       return { valid: false, message: "Name must be only letters" };
