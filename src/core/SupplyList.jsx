@@ -1,5 +1,4 @@
 import React from "react";
-import { useState } from "react";
 import { Table } from "react-bootstrap";
 
 import { useSelector } from "react-redux";
@@ -7,8 +6,6 @@ import SupplyTr from "./SupplyTr";
 
 export default function SupplyList() {
   const state = useSelector((state) => state.supply);
-
-  // TODO Add db folder with the initial supply data
 
   return (
     <div className="supplyList">

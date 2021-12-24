@@ -31,10 +31,7 @@ export default function Form() {
             </div>
           );
         })}
-        {/* id: 2,
-    currentAmount: 0,
-    fullAmount: 13,
-    supplyName: "Covid-19 tests", */}
+
         <Button
           variant="primary"
           onClick={() => {
