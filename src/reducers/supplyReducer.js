@@ -34,7 +34,8 @@ export default function supplyReducer(state = initialSupply, action) {
         }
         return supplyItem;
       });
-
+    case "DELETE_SUPPLY_ITEM":
+      return state.filter((supplyItem) => supplyItem.id !== action.payload.id);
     default:
       return state;
   }

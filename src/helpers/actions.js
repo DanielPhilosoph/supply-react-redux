@@ -26,3 +26,10 @@ export function addSupplyItem(supplyName, fullAmount, currentAmount) {
     },
   };
 }
+
+export function deleteItem(id) {
+  return {
+    type: "DELETE_SUPPLY_ITEM",
+    payload: { id: id },
+  };
+}
